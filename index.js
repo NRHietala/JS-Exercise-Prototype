@@ -42,17 +42,27 @@ Airplane.prototype.land = function () {
 function Person(name,age) {
   this.name = name,
   this.age = age,
-  this.stomach = [],
-  this.eat = function () {
-    console.log("someFood");
-  },
-  this.poop = function () {
-    console.log('You Pooped!')
-  },
-  this.str = function () {
-
-  }
+  this.stomach = []
 }
+
+Person.prototype.eat = function (someFood) {
+  if(this.stomach.length < 10) {
+    this.stomach.push(someFood);
+    console.log("food");
+  }
+},
+
+Person.prototype.poop = function () {
+  if(this.stomach.length >= 10) {
+    this.stomach = [];
+    console.log('You Pooped!')
+  }
+},
+
+Person.prototype.toString = function () {
+  return `${this.name} is ${this.age}`
+}
+
 
 /*
   TASK 2
@@ -71,10 +81,15 @@ function Person(name,age) {
 function Car(model, milesPerGallon) {
   this.model = model,
   this.milesPerGallon = milesPerGallon,
-  this.fill = function (gallons) {
-    console.log(`You filled up with ${this.gallons} gallons!`)
-  }
+  this.tank = 0,
+  this.odometer = 0
 }
+
+Car.prototype.fill = function (gallons) {
+  this.tank += gallons;
+    console.log(`You filled up with ${this.gallons} gallons! Now you have ${this.tank} gallons total.`)
+  }
+
 
 /*
   TASK 3
@@ -84,8 +99,13 @@ function Car(model, milesPerGallon) {
         + Should return a string "Playing with x", x being the favorite toy.
 */
 function Baby() {
-  
+  Person.call(this, "Nathan", 2)
+  Baby.prototype = Object.create(Person.prototype);
 }
+
+Baby.prototype.play = function (favoriteToy) {
+  return `Playing with ${favoriteToy}`;
+};
 
 /* 
   TASK 4
