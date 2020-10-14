@@ -87,7 +87,7 @@ function Car(model, milesPerGallon) {
 
 Car.prototype.fill = function (gallons) {
   this.tank += gallons;
-    console.log(`You filled up with ${this.gallons} gallons! Now you have ${this.tank} gallons total.`)
+    console.log(`You filled up with ${gallons} gallons! Now you have ${this.tank} gallons total.`)
   }
 
 
@@ -98,6 +98,7 @@ Car.prototype.fill = function (gallons) {
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
+
 function Baby() {
   Person.call(this, "Lucy", 5)
   Baby.prototype = Object.create(Person.prototype);
