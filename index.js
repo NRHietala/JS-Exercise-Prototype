@@ -50,14 +50,14 @@ Person.prototype.eat = function (someFood) {
     this.stomach.push(someFood);
     console.log("food");
   }
-},
+}
 
 Person.prototype.poop = function () {
   if(this.stomach.length >= 10) {
     this.stomach = [];
     console.log('You Pooped!')
   }
-},
+}
 
 Person.prototype.toString = function () {
   return `${this.name} is ${this.age}`
@@ -102,11 +102,19 @@ function Baby() {
   Person.call(this, "Lucy", 5)
   Baby.prototype = Object.create(Person.prototype);
   this.favoriteToy = "trains"
+
+  Baby.prototype.play = function () {
+    return `Playing with ${this.favoriteToy}`;
+  }
 }
 
-Baby.prototype.play = function (favoriteToy) {
-  return `Playing with ${this.favoriteToy}`;
-};
+/*********** WONT WORK OUTSIDE FUNCTION????????????**************************/
+/*********** WONT WORK OUTSIDE FUNCTION????????????**************************/
+/*********** WONT WORK OUTSIDE FUNCTION????????????**************************/
+
+// Baby.prototype.play = function () {
+//   return `Playing with ${this.favoriteToy}`;
+// }
 
 /* 
   TASK 4
