@@ -121,10 +121,10 @@ function Baby() {
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Implicit binding, binding to what is left of the dot.
+  2. New binding, making a new object which is implicitly binded to its object.
+  3. Explicit binding, you explicitly tell it what it's binded to.
+  4. Window binding, this points to the parent window in this case. Don't use it.
 */
 
 
